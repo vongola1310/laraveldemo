@@ -18,5 +18,5 @@ Route::get('/', function () {
 });
 */
 Route::get('/bienvenida', function (){
-return view('principal.index');
+return view('index');
 });

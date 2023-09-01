@@ -11,4 +11,4 @@ setInterval(() => {
   currentIndex = (currentIndex + 1) % carouselItems.length;
   updateCarouselPosition();
 }, 3000); // Cambiar de imagen cada 3 segundos (ajusta el valor según tus preferencias)
-mix.js('resources/js/mi-script.js', 'public/js');
+mix.js('resources/js/script.js', 'public/js');

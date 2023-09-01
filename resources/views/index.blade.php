@@ -2,10 +2,11 @@
 
 @section('content')
    <link rel="stylesheet" href="{{ asset('/estilos.css') }}">
+
+
    <div class="content">
     Bienvenido a EUROIMMUN MEXICO
-  
-</div>
+  </div>
 
 <div class="background"></div>
 
@@ -41,19 +42,12 @@
         The standard chunk of Lorem
         Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de
         Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by
-        English versions from the 1914 translation by H. Rackham.</p>
+        English versions from the 1914 translation by H. Rackham.
+      </p>
 
-        <div class="carrusel">
-            <div class="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item"> <a href=""><img src="IMG/Carrusel/ana.jpg" alt="Imagen 1"></a></div>
-                  <div class="carousel-item"><a href=""> <img src="IMG/Carrusel/csm_Analyzer_I-2P_teaser_new_01d2e4f81d.jpg" alt="Imagen 2"></a></div>
-                  <div class="carousel-item"> <a href=""><img src="IMG/Carrusel/csm_WS_ELISA_teaser_0cf86a7b21.jpg" alt="Imagen 3"> </a></div>
-                  <!-- Agrega más imágenes aquí si es necesario -->
-                </div>
-              </div>
-        </div>
 </div>
+
+
 
 <script src="{{ asset('js/script.js') }}"></script>
 @endsection
