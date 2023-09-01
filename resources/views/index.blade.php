@@ -48,6 +48,5 @@
 </div>
 
 
-
 <script src="{{ asset('') }}"></script>
 @endsection
