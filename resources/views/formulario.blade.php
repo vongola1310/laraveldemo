@@ -50,7 +50,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">EUROIMMUN</a></li>
                         <li><a class="dropdown-item" href="#">HELENA</a></li>
-                        <li><a class="dropdown-item" href="#">DEMEDITEC</a></li>
+                        <li><a class="dropdown-item" href="">DEMEDITEC</a></li>
                         <li><a class="dropdown-item" href="#">OXFORD</a></li>
                         <li><a class="dropdown-item" href="#">GENEALL</a></li>
                     </ul>
