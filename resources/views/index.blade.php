@@ -1,4 +1,4 @@
-@extends('formulario')
+@extends('menu')
 
 @section('content')
    <link rel="stylesheet" href="{{ asset('/estilos.css') }}">
@@ -48,5 +48,5 @@
 </div>
 
 
-<script src="{{ asset('') }}"></script>
+
 @endsection
