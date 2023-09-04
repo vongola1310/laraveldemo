@@ -17,10 +17,6 @@ Route::get('/', function (){
     return view('index');
     });
 
-Route::get('/bienvenida', function (){
-return view('index');
-});
-
 Route::get('/agregar', function (){
     return view('agregarsec');
 });
