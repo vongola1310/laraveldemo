@@ -24,14 +24,15 @@
 
     <div class="container mt-5">
         <h2>Crear Nueva Sección</h2>
-        <form action="admin.php" method="post" enctype="multipart/form-data">
+        <form action="{{ route('agregar')}}" method="post" enctype="multipart/form-data">
+            @csrf 
             <div class="form-group">
                 <label for="titulo">Título de la Sección:</label>
-                <input type="text" class="form-control" id="Titulo" name="Titulo" required>
+                <input type="text" class="form-control" id="Titulo" name="titulo" required>
             </div>
             <div class="form-group">
                 <label for="contenido">Contenido:</label>
-                <textarea class="form-control" id="Descripcion" name="Descripcion" rows="4" required></textarea>
+                <textarea class="form-control" id="Descripcion" name="descripcion" rows="4" required></textarea>
             </div>
             <div class="form-group">
                 <label for="imagen">Seleccionar Imagen:</label>

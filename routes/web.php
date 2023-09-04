@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\seccionesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', function (){
+    return view('index');
+    });
 
 Route::get('/bienvenida', function (){
 return view('index');
@@ -20,3 +24,8 @@ return view('index');
 Route::get('/agregar', function (){
     return view('agregarsec');
 });
+
+Route::post('/agregar',[seccionesController::class,'store'])->name('agregar');
+
+
+
