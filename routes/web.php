@@ -13,15 +13,29 @@ use App\Http\Controllers\seccionesController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
 Route::get('/', function (){
-    return view('index');
-    });
+return view('index');
+});
 
 Route::get('/agregar', function (){
     return view('agregarsec');
+});
+
+Route::get('/admin',function(){
+      return view('auth/login');
 });
 
 Route::post('/agregar',[seccionesController::class,'store'])->name('agregar');
 
 
 
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+?>
