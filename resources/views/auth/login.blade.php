@@ -64,7 +64,7 @@ height: 100%;
                   </div>
       
                  
-                  <p> si no tienes cuenta comunicate con un adminmistrador</p>
+                  <p> si no tienes cuenta comunicate con un adminmistrador xd</p>
       
                 </form>
       
