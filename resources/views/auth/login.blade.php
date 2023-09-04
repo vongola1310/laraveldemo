@@ -47,20 +47,20 @@ height: 100%;
       
                 <form style="width: 25rem;">
       
-                  <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
+                  <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Iniciar Sesión</h3>
       
                   <div class="form-outline mb-4">
-                    <input type="email" id="form2Example18" class="form-control form-control-lg" />
-                    <label class="form-label" for="form2Example18">Email address</label>
+                    <input type="email" id="form2Example18" name="correo" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example18">Direccion de correo</label>
                   </div>
       
                   <div class="form-outline mb-4">
-                    <input type="password" id="form2Example28" class="form-control form-control-lg" />
-                    <label class="form-label" for="form2Example28">Password</label>
+                    <input type="password" id="form2Example28" name="pass" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example28">Contraseña</label>
                   </div>
       
                   <div class="pt-1 mb-4">
-                    <button class="btn btn-success" type="button">Login</button>
+                    <button class="btn btn-success" type="button">Entrar</button>
                   </div>
       
                  
