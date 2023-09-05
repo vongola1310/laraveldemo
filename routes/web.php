@@ -17,11 +17,9 @@ use App\Http\Controllers\seccionesController;
 
 Route::get('/', function (){
 return view('index');
-});
-
-Route::get('/agregar', function (){
-    return view('agregarsec');
-});
+    });
+    
+  
 
 Route::get('/admin',function(){
       return view('auth/login');
