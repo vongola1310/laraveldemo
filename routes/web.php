@@ -28,7 +28,9 @@ Route::get('/admin',function(){
 Route::post('/agregar',[seccionesController::class,'store'])->name('agregar');
 
 
-
+Route::get('/secciones',function(){
+    return view('secciones');
+});
 
 
 
