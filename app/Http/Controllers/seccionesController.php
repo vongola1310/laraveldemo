@@ -35,4 +35,8 @@ class seccionesController extends Controller
 
 
     }
+
+    public function index(Request $request){
+
+    }
 }
