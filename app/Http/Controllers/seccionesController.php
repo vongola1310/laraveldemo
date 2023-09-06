@@ -30,7 +30,7 @@ class seccionesController extends Controller
        
         $secciones->save();
 
-        return redirect()->route('agregar')->with('succes','Tarea Creada correctamente');
+        return redirect()->route('home')->with('succes','Tarea Creada correctamente');
 
 
 

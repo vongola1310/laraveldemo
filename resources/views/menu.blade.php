@@ -59,7 +59,7 @@
                     <a class="nav-link" href="#">Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Eventos</a>
+                    <a class="nav-link" href="{{ url('secciones')}}">Eventos</a>
                 </li>
               
             </ul>
@@ -74,8 +74,9 @@
         </div>
     </div>
 </nav>
+    <div class="menu">
     @yield('content')
-
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

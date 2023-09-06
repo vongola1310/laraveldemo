@@ -25,12 +25,14 @@ Route::get('/admin',function(){
       return view('auth/login');
 });
 
-Route::post('/agregar',[seccionesController::class,'store'])->name('agregar');
+Route::post('/home',[seccionesController::class,'store'])->name('home');
 
 
 Route::get('/secciones',function(){
     return view('secciones');
 });
+
+
 
 
 

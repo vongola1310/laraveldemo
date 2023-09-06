@@ -36,7 +36,7 @@
 
     <div class="container mt-5">
         <h2>Crear Nueva Sección</h2>
-        <form action="{{ route('agregar')}}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('home')}}" method="post" enctype="multipart/form-data">
             @csrf 
             <div class="form-group">
                 <label for="titulo">Título de la Sección:</label>
