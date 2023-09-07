@@ -34,7 +34,7 @@ Route::get('/secciones',function(){
 
 
 
-
+Route::get('/secciones',[seccionesController::class,'index'])->name('secciones');
 
 Auth::routes();
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\seccion;
+use Illuminate\Support\Facades\DB;
 
 class seccionesController extends Controller
 {
@@ -36,7 +37,9 @@ class seccionesController extends Controller
 
     }
 
-    public function index(Request $request){
-
+    public function index(){
+        $datos = DB::table('seccions')->get(); // Reemplaza 'nombre_de_la_tabla' con el nombre de tu tabla
+        $colum = Seccion::select('imagen')->get();
+        return view('secciones', ['datos' => $datos]);
     }
 }
