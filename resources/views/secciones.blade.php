@@ -23,21 +23,20 @@
         
        
     </div>
-    
-    
-   
-
+    @foreach ($datos as $dato)
       <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
         <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
           <div class="letras my-3 py-3">
             <h2 class="display-5">{{ $dato->titulo }}</h2>
+            <h1>{{$dato->date}}</h1>
             <p class="lead">{{ $dato->descripcion}}</p>
           </div>
-          <div class="bg-light box-shadow mx-auto">
-          <img src="{{ asset($dato->imagen) }}" alt="Imagen" class="mx-auto" width="100%" height="100%" >
-          </div>
+          <img src="{{ asset($dato->imagen) }}"class="mx-auto" width="50%" height="80%" >
+          
         </div>
       </div>
+
+      
       @endforeach
       
 

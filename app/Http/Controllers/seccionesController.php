@@ -12,8 +12,10 @@ class seccionesController extends Controller
     public function store(Request $request){
         $request -> validate([
             'titulo' => 'required|min:5',
-            'descripcion' =>'required|min:5'
+            'descripcion' =>'required|min:5',
+            'date'=>'required'
         ]);
+        //este if es para la imagen
         if ($request->hasFile('imagen')) {
            $file=$request->file('imagen');
            $ruta = 'imgsaves/';
@@ -28,6 +30,7 @@ class seccionesController extends Controller
         $secciones -> titulo = $request-> titulo;
         $secciones -> descripcion = $request-> descripcion;
         $secciones->imagen = $ruta.$nombreimagen;
+        $secciones->date=$request-> date;
        
         $secciones->save();
 
@@ -40,6 +43,8 @@ class seccionesController extends Controller
     public function index(){
         $datos = DB::table('seccions')->get(); // Reemplaza 'nombre_de_la_tabla' con el nombre de tu tabla
         $colum = Seccion::select('imagen')->get();
+        $ids=Seccion::select('id')->get();
         return view('secciones', ['datos' => $datos]);
+        
     }
 }

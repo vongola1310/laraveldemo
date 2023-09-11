@@ -34,6 +34,11 @@
                 <label for="imagen">Seleccionar Imagen:</label>
                 <input type="file" class="form-control-file" id="imagen" name="imagen" required>
             </div>
+
+            <div class="form-group">
+                <label for="date">Seleccionar Fecha:</label>
+                <input type="date" class="form-control-file" id="date" name="date" required>
+            </div>
             <button type="submit" class="btn btn-success">Crear Sección</button>
         </form>
     </div>
