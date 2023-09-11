@@ -23,7 +23,6 @@
         
        
     </div>
-    @foreach ($datos as $dato)
     
     
    
@@ -38,7 +37,6 @@
           <img src="{{ asset($dato->imagen) }}" alt="Imagen" class="mx-auto" width="100%" height="100%" >
           </div>
         </div>
-        
       </div>
       @endforeach
       
