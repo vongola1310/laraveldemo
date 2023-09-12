@@ -43,7 +43,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('/edit', [seccionesController::class,'show'])->name('edit.show');
-Route::get('/form/{$id}', [seccionesController::class,'update'])->name('form.edit');
+Route::get('/form/{id}/', [seccionesController::class,'ver'])->name('form.edit');
+Route::put('/update/{id}', [seccionesController::class, 'update'])->name('form.update');
+
+
+
 
 
 

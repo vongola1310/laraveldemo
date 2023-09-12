@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\DB;
 
 class seccionesController extends Controller
 {
-  
     public function store(Request $request){
         $request -> validate([
             'titulo' => 'required|min:5',
@@ -21,11 +20,8 @@ class seccionesController extends Controller
            $ruta = 'imgsaves/';
            $nombreimagen= time() . '-'.$file->getClientOriginalName();
            $subirimagen = $file->move($ruta, $nombreimagen);
-           
-          
-            // Aquí puedes guardar la ruta de la imagen en tu base de datos si es necesario
+             // Aquí puedes guardar la ruta de la imagen en tu base de datos si es necesario
         }
-
         $secciones = new seccion;
         $secciones -> titulo = $request-> titulo;
         $secciones -> descripcion = $request-> descripcion;
@@ -35,8 +31,6 @@ class seccionesController extends Controller
         $secciones->save();
 
         return redirect()->route('home')->with('succes','Tarea Creada correctamente');
-
-
 
     }
 
@@ -56,34 +50,45 @@ class seccionesController extends Controller
 
     }
 
-
-
-
-
-
-
-
-    public function update(Request $request, $id)
-{
+    public function update(Request $request, $id){
+    
+    // Validación y actualización de datos aquí
+    $request->validate([
+        'titulo' => 'required',
+        'descripcion' => 'required',
+        'date'=>'required'
+        // Agrega aquí las reglas de validación para otros campos si es necesario
+    ]);
+    // Obtén la entrada existente que deseas actualizar
+    $seccion = Seccion::find($id);
+    // Actualiza los campos con los nuevos valores
+    $seccion->titulo = $request->input('titulo');
+    $seccion->descripcion = $request->input('descripcion');
+    $seccion->date=$request->input('date');
+    // Actualiza otros campos según sea necesario
     if ($request->hasFile('imagen')) {
         $file=$request->file('imagen');
         $ruta = 'imgsaves/';
         $nombreimagen= time() . '-'.$file->getClientOriginalName();
         $subirimagen = $file->move($ruta, $nombreimagen);
-        
-       
-         // Aquí puedes guardar la ruta de la imagen en tu base de datos si es necesario
+
+        $seccion->imagen = $ruta . $nombreimagen;
+          // Aquí puedes guardar la ruta de la imagen en tu base de datos si es necesario
      }
-    // Validación y actualización de datos aquí
-    $seccion = seccion::find($id);
-    $seccion->titulo = $request->titulo;
-    $seccion->descripcion = $request->descripcion;
-    $secciones->imagen = $ruta.$nombreimagen;
-   
-    // Actualiza otros campos según sea necesario
+
+    // Guarda los cambios en la base de datos
     $seccion->save();
 
-    return redirect()->route('form')->with('success', 'Sección actualizada correctamente');
+    return redirect()->route('secciones')->with('success', 'Sección actualizada correctamente');
+}
+
+public function ver($id)
+{
+    // Obtén la sección correspondiente según el ID
+    $datos = Seccion::find($id);
+    
+    // Retornar la vista del formulario de edición con la sección
+    return view('form', ['datos' => $datos]);
 }
 
    
