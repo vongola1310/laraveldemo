@@ -44,7 +44,49 @@ class seccionesController extends Controller
         $datos = DB::table('seccions')->get(); // Reemplaza 'nombre_de_la_tabla' con el nombre de tu tabla
         $colum = Seccion::select('imagen')->get();
         $ids=Seccion::select('id')->get();
+        
         return view('secciones', ['datos' => $datos]);
         
     }
+
+    public function show(){
+
+    $datos= DB::table('seccions')->get();
+    return view('edit', ['datos' => $datos] );
+
+    }
+
+
+
+
+
+
+
+
+    public function update(Request $request, $id)
+{
+    if ($request->hasFile('imagen')) {
+        $file=$request->file('imagen');
+        $ruta = 'imgsaves/';
+        $nombreimagen= time() . '-'.$file->getClientOriginalName();
+        $subirimagen = $file->move($ruta, $nombreimagen);
+        
+       
+         // Aquí puedes guardar la ruta de la imagen en tu base de datos si es necesario
+     }
+    // Validación y actualización de datos aquí
+    $seccion = seccion::find($id);
+    $seccion->titulo = $request->titulo;
+    $seccion->descripcion = $request->descripcion;
+    $secciones->imagen = $ruta.$nombreimagen;
+   
+    // Actualiza otros campos según sea necesario
+    $seccion->save();
+
+    return redirect()->route('form')->with('success', 'Sección actualizada correctamente');
+}
+
+   
+
+  
 }

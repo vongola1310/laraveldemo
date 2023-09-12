@@ -40,4 +40,15 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+
+Route::get('/edit', [seccionesController::class,'show'])->name('edit.show');
+Route::get('/form/{$id}', [seccionesController::class,'update'])->name('form.edit');
+
+
+
+
+
+
+
 ?>

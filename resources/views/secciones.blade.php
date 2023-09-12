@@ -8,36 +8,62 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
       <link href="{{ asset('bootstrap.min.css') }}" rel="stylesheet">
       <link href="{{ asset('product.css') }}" rel="stylesheet">
+      <title>Eventos Proximos</title>
 
-    <title>Product example for Bootstrap</title>
-
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-        <div class="product-device" style="position: relative;">
-            <img src="{{ asset('img/banner.jpg') }}" alt="" style="width: 100%; height: auto; position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto;">
-        </div>
-        <div class="encabezado col-md-5 p-lg-5 mx-auto my-5">
-          <h1 class="display-4 font-weight-normal" style="color:white">Punny headline</h1>
-          <p class="lead font-weight-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple's marketing pages.</p>
-          
-        </div>
-        
-       
-    </div>
-    @foreach ($datos as $dato)
-      <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-        <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-          <div class="letras my-3 py-3">
-            <h2 class="display-5">{{ $dato->titulo }}</h2>
-            <h1>{{$dato->date}}</h1>
-            <p class="lead">{{ $dato->descripcion}}</p>
-          </div>
-          <img src="{{ asset($dato->imagen) }}"class="mx-auto" width="50%" height="80%" >
-          
-        </div>
-      </div>
+      <body>
 
       
-      @endforeach
+    
+        <main role="main">
+    
+          <section class="jumbotron text-center">
+            <div class="container">
+              <img src="{{ asset('img/EUROIMMUN-INOCHEM.png') }}" width="80%">
+            
+              <p class="lead text-muted">Te ofrecemos una variedad de eventos como webinar y talleres si no ves alguno pregunta directamente</p>
+              <p>
+                <a href="#" class="btn btn-primary my-2">Contactanos</a>
+                <a href="{{ url('/')}}" class="btn btn-secondary my-2">Inicio</a>
+              </p>
+            </div>
+          </section>
+          
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+            
+         @foreach ($datos as $dato)  
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="{{asset($dato->imagen) }}">
+                <div class="card-body">
+                  <p class="card-text">{{$dato->titulo}}</p>
+                  <p class="card-text">{{$dato->descripcion}}</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn btn-success">Inscríbete</button>
+                    </div>
+                    <small class="text-muted">Fecha de inicio:    {{$dato->date}}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          @endforeach
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
+
+          
+          
+   
+    
+
       
 
    
