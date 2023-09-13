@@ -56,7 +56,9 @@
             </div>
             <button type="submit" class="btn btn-success">Crear Sección</button>
         </form>
-        <a href="{{ url('edit') }}"><button type="submit" class="btn btn-success">Editar secciones</button></a>
+        <br>
+        <a href="{{ url('edit') }}"><button type="submit" class="btn btn-info">Editar secciones</button></a>
+       
     </div> 
     </div>
 

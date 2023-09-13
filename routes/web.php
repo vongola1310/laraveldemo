@@ -42,9 +42,18 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
+
+
+Route::middleware(['web', 'auth'])->group(function () {
+
 Route::get('/edit', [seccionesController::class,'show'])->name('edit.show');
 Route::get('/form/{id}/', [seccionesController::class,'ver'])->name('form.edit');
 Route::put('/update/{id}', [seccionesController::class, 'update'])->name('form.update');
+Route::delete('/destroy/{id}', [seccionesController::class, 'destroy'])->name('form.destroy');
+
+    
+    // Más rutas protegidas...
+});
 
 
 

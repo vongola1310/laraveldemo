@@ -91,6 +91,14 @@ public function ver($id)
     return view('form', ['datos' => $datos]);
 }
 
+
+public function destroy($id){
+    $seccion = seccion::find($id);
+    $seccion->delete();
+
+    return redirect()->route('secciones')->with('success', 'Sección eliminada correctamente');
+
+}
    
 
   

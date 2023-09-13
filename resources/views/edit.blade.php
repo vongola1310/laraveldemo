@@ -39,7 +39,13 @@
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
                <a href="{{ route('form.edit', $dato->id) }}"> <button type="button" class="btn btn-sm btn btn-success">Editar</button></a>
-               <a href=""><button type="button" class="btn btn-sm btn btn-danger">Eliminar</button></a>
+
+               <form action="{{ route('form.destroy', $dato->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-sm btn btn-danger">Eliminar</button>
+            </form>
+               
                 
               </div>
               <small class="text-muted">Fecha de inicio:    {{$dato->date}}</small>
