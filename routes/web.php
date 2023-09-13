@@ -18,6 +18,11 @@ use App\Http\Controllers\seccionesController;
 Route::get('/', function (){
 return view('index');
     });
+
+    Route::get('/nosotros', function (){
+        return view('contenestatico/nosotros');
+            });
+            
     
   
 
@@ -49,7 +54,7 @@ Route::middleware(['web', 'auth'])->group(function () {
 Route::get('/edit', [seccionesController::class,'show'])->name('edit.show');
 Route::get('/form/{id}/', [seccionesController::class,'ver'])->name('form.edit');
 Route::put('/update/{id}', [seccionesController::class, 'update'])->name('form.update');
-Route::delete('/destroy/{id}', [seccionesController::class, 'destroy'])->name('form.destroy');
+Route::delete('/delete/{id}', [seccionesController::class, 'destroy'])->name('form.destroy');
 
     
     // Más rutas protegidas...

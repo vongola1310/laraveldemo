@@ -5,7 +5,7 @@ body {
    background-size: cover;
  }
  .background {
-   background: url('img/banner.jpg') no-repeat center center fixed;
+   background: url('img/fotoportada.JPG') no-repeat center center fixed;
    background-size: cover;
    position: fixed;
    top: 0;
